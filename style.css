@@ -1,0 +1,265 @@
+/* ============================================================
+   NIFTY 50 Live Forecast — Dark Finance Theme
+   ============================================================ */
+
+:root {
+    --bg:           #0d1117;
+    --surface:      #161b22;
+    --surface-2:    #1c2230;
+    --border:       #2a3142;
+    --accent-green: #00c853;
+    --accent-red:   #ff4d4d;
+    --accent-blue:  #4fa3e0;
+    --accent-amber: #ffa726;
+    --text:         #e6edf3;
+    --text-muted:   #8b949e;
+    --mono:         'JetBrains Mono', 'Courier New', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.9rem 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.live-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent-green);
+    box-shadow: 0 0 6px var(--accent-green);
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
+}
+
+header h1 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+    letter-spacing: 0.01em;
+}
+
+.meta-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 0.25rem 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* ── Main layout ─────────────────────────────────────────── */
+main {
+    padding: 1.5rem 0 3rem;
+}
+
+/* ── Timestamp bar ───────────────────────────────────────── */
+.timestamp-bar {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: var(--mono);
+    padding: 0.5rem 0 1.2rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+}
+
+.timestamp-bar strong {
+    color: var(--accent-blue);
+}
+
+/* ── Metric cards ────────────────────────────────────────── */
+.metrics-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+.metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem 1.2rem;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-blue);
+}
+
+.metric-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.metric-value {
+    font-family: var(--mono);
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+}
+
+.metric-card.bullish .metric-value { color: var(--accent-amber); }
+.metric-card.upper   .metric-value { color: var(--accent-red);   }
+.metric-card.lower   .metric-value { color: var(--accent-green); }
+.metric-card.range   .metric-value { color: var(--accent-blue);  }
+
+.metric-sub {
+    font-size: 0.74rem;
+    color: var(--text-muted);
+}
+
+/* ── Chart section ───────────────────────────────────────── */
+.chart-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.chart-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.chart-note {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-family: var(--mono);
+}
+
+.chart-container {
+    padding: 0.5rem;
+}
+
+.chart-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+/* ── How it works (collapsible) ──────────────────────────── */
+.how-it-works {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.9rem 1.2rem;
+}
+
+.how-it-works summary {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+}
+
+.how-it-works summary::before {
+    content: '▸ ';
+    color: var(--accent-blue);
+}
+
+.how-it-works[open] summary::before {
+    content: '▾ ';
+}
+
+.how-it-works ul {
+    margin: 0.9rem 0 0.2rem;
+    padding-left: 1.3rem;
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+.how-it-works li strong {
+    color: var(--text);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+footer {
+    border-top: 1px solid var(--border);
+    padding: 1rem 0;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .metrics-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    header h1 { font-size: 1rem; }
+    .metric-value { font-size: 1.55rem; }
+}
+
+@media (max-width: 480px) {
+    .metrics-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}

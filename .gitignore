@@ -1,0 +1,6 @@
+# Model code and weights — keep private
+model/
+update_predictions.py
+__pycache__/
+*.pyc
+.env

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIFTY 50 Live Forecast</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <div class="header-left">
+                <span class="live-dot"></span>
+                <h1>NIFTY 50 &mdash; Live Forecast</h1>
+            </div>
+            <div class="header-right">
+                <span class="meta-pill">NSE &bull; 5-Min &bull; AI Powered</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Timestamp bar -->
+        <div class="timestamp-bar">
+            <span>Last updated (IST):&nbsp;<strong id="update-time">2026-04-20 17:23:26</strong></span>
+        </div>
+
+        <!-- Metric cards -->
+        <div class="metrics-container">
+            <div class="metric-card bullish">
+                <div class="metric-label">Bullish Bar Ratio</div>
+                <div class="metric-value" id="upside-prob">57.5%</div>
+                <div class="metric-sub">Next 2h · close &gt; open %</div>
+            </div>
+            <div class="metric-card upper">
+                <div class="metric-label">Upper Bound</div>
+                <div class="metric-value" id="upper-bound">24340.1</div>
+                <div class="metric-sub">Max predicted high</div>
+            </div>
+            <div class="metric-card lower">
+                <div class="metric-label">Lower Bound</div>
+                <div class="metric-value" id="lower-bound">23998.2</div>
+                <div class="metric-sub">Min predicted low</div>
+            </div>
+            <div class="metric-card range">
+                <div class="metric-label">Predicted Range</div>
+                <div class="metric-value" id="pred-range">341.9 pts</div>
+                <div class="metric-sub">Upper − Lower spread</div>
+            </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="chart-section">
+            <div class="chart-header">
+                <span class="chart-title">2-Hour Probabilistic Price Forecast</span>
+                <span class="chart-note">Monte Carlo · 10 paths · 5-min candles</span>
+            </div>
+            <div class="chart-container">
+                <img src="prediction_chart.png" alt="NIFTY 50 Forecast" class="chart-img">
+            </div>
+        </div>
+
+        <!-- How it works -->
+        <details class="how-it-works">
+            <summary>How it works</summary>
+            <ul>
+                <li><strong>Context:</strong> Last 512 five-minute bars (~42 h of trading) fetched live from OpenAlgo.</li>
+                <li><strong>Model:</strong> AI predictor fine-tuned on NIFTY 50 5-min candlestick data.</li>
+                <li><strong>Horizon:</strong> 24 × 5-min bars = 2 hours of predicted OHLC candles.</li>
+                <li><strong>Uncertainty:</strong> 10 independent Monte Carlo runs produce the shaded forecast bands.</li>
+            </ul>
+        </details>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <span>NIFTY 50 Live Forecast &bull; AI-powered probabilistic model</span>
+        </div>
+    </footer>
+</body>
+</html>
