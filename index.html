@@ -24,29 +24,29 @@
 
         <!-- Timestamp bar -->
         <div class="timestamp-bar">
-            <span>Last updated (IST):&nbsp;<strong id="update-time">2026-04-24 16:49:34</strong></span>
+            <span>Last updated (IST):&nbsp;<strong id="update-time">2026-04-24 16:52:42</strong></span>
         </div>
 
         <!-- Metric cards -->
         <div class="metrics-container">
             <div class="metric-card bullish">
                 <div class="metric-label">Bullish Bar Ratio</div>
-                <div class="metric-value" id="upside-prob">53.5%</div>
-                <div class="metric-sub">Next 1d · close &gt; open %</div>
+                <div class="metric-value" id="upside-prob">59.6%</div>
+                <div class="metric-sub">Next 2h · close &gt; open %</div>
             </div>
             <div class="metric-card upper">
                 <div class="metric-label">Upper Bound</div>
-                <div class="metric-value" id="upper-bound">24079.0</div>
+                <div class="metric-value" id="upper-bound">23800.6</div>
                 <div class="metric-sub">Max predicted high</div>
             </div>
             <div class="metric-card lower">
                 <div class="metric-label">Lower Bound</div>
-                <div class="metric-value" id="lower-bound">23661.8</div>
+                <div class="metric-value" id="lower-bound">23646.3</div>
                 <div class="metric-sub">Min predicted low</div>
             </div>
             <div class="metric-card range">
                 <div class="metric-label">Predicted Range</div>
-                <div class="metric-value" id="pred-range">417.2 pts</div>
+                <div class="metric-value" id="pred-range">154.3 pts</div>
                 <div class="metric-sub">Upper − Lower spread</div>
             </div>
         </div>
@@ -54,7 +54,7 @@
         <!-- Chart -->
         <div class="chart-section">
             <div class="chart-header">
-                <span class="chart-title">1d Probabilistic Price Forecast</span>
+                <span class="chart-title">2h Probabilistic Price Forecast</span>
                 <span class="chart-note">Monte Carlo · 10 paths · 5-min candles</span>
             </div>
             <div class="chart-container">
@@ -68,7 +68,7 @@
             <ul>
                 <li><strong>Context:</strong> Last 512 five-minute bars (~42 h of trading) fetched live from OpenAlgo.</li>
                 <li><strong>Model:</strong> AI predictor fine-tuned on NIFTY 50 5-min candlestick data.</li>
-                <li><strong>Horizon:</strong> 75 × 5-min bars = 1d of predicted OHLC candles.</li>
+                <li><strong>Horizon:</strong> 24 × 5-min bars = 2h of predicted OHLC candles.</li>
                 <li><strong>Uncertainty:</strong> 10 independent Monte Carlo runs produce the shaded forecast bands.</li>
             </ul>
         </details>
